@@ -4,12 +4,20 @@ compatibility_date = "2024-05-06"
 
 [ai]
 binding = "AI" # i.e. available in your Worker on env.AI
+# wrangler.toml (wrangler v3.88.0^)
+[observability.logs]
+enabled = true
 
-[[r2_buckets]]
-binding = "IMAGE_BUCKET"
-bucket_name = "openai-cf-images"
-preview_bucket_name = "ai-images"
 
+
+
+# [[r2_buckets]]
+# binding = "IMAGE_BUCKET"
+# bucket_name = "openai-cf-images"
+# preview_bucket_name = "ai-images"
+[[kv_namespaces]]
+binding = "img"
+id = "4c9656a5dee44a9dbf04cb8d3439a6d6"
 [vars]
-CLOUDFLARE_ACCOUNT_ID = "c8c30db3dddc4ad31065d336368c7905" # replace with your own.
+CLOUDFLARE_ACCOUNT_ID = "23e8bd60633ebd284903f22ae57a435c" # replace with your own.
 # MODEL_MAPPER = { "gpt-3.5-turbo" = "@cf/meta/llama-2-7b-chat-int8" } # Optional
